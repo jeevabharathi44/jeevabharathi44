@@ -1,0 +1,37 @@
+name: Update README SVG Cards
+
+on:
+  schedule:
+    - cron: "0 2 * * *" # Daily at 02:00 UTC (07:30 IST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch GitHub contributions
+        run: python scripts/fetch_contributions.py
+
+      - name: Render README cards (light & dark)
+        run: python scripts/render_readme_cards.py
+
+      - name: Commit updated data and SVG cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/contributions.json cards/ fonts/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh animated README SVG cards"
+            git push
+          fi

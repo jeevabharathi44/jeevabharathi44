@@ -1,37 +1,34 @@
-# Hi, I'm Jeeva Bharathi M 👋
+<div align="center">
 
-**Final-Year B.E. Computer Science & Engineering Student** at Sri Ramakrishna Institute of Technology, Coimbatore (`2023 – 2027`)  
-📍 Madurai, Tamil Nadu, India | 💼 Open to **Software Engineer**, **Full Stack Developer**, **Python Developer**, and **AI/ML Engineer** internships & entry-level roles
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./cards/hero-dark.svg" />
+  <img src="./cards/hero-light.svg" width="100%" alt="Jeeva Bharathi M — Software & AI Engineering" />
+</picture>
 
----
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./cards/graph-dark.svg" />
+  <img src="./cards/graph-light.svg" width="100%" alt="53-week GitHub contribution matrix" />
+</picture>
 
-### 🚀 Featured Projects
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./cards/activity-dark.svg" />
+  <img src="./cards/activity-light.svg" width="100%" alt="Monthly contribution cadence and streaks" />
+</picture>
 
-- **[Smart Loan Processing System (`loan-eligibility-ai`)](https://github.com/jeevabharathi44/loan-eligibility-ai)** — Explainable AI-based digital personal loan processing system using **Explainable Boosting Machine (EBM)**, **FastAPI**, **React.js**, **Node.js / Express.js**, **MySQL**, and **Docker Compose**.
-- **[Driving Scenario Analyzer (`driving-scenario-analyzer`)](https://github.com/jeevabharathi44/driving-scenario-analyzer)** — Python AI tool converting natural-language driving scenarios into validated structured JSON via **LLM APIs** with schema validation, retry logic, an offline rule-based baseline, **NumPy** risk scoring, **pandas / scikit-learn** benchmarking, and **33 pytest tests**.
+<a href="https://github.com/jeevabharathi44/loan-eligibility-ai"><picture><source media="(prefers-color-scheme: dark)" srcset="./cards/tile-projects-dark.svg" /><img src="./cards/tile-projects-light.svg" width="32.5%" alt="Featured Projects" /></picture></a>
+<a href="https://github.com/jeevabharathi44?tab=repositories"><picture><source media="(prefers-color-scheme: dark)" srcset="./cards/tile-stack-dark.svg" /><img src="./cards/tile-stack-light.svg" width="32.5%" alt="AI and Tech Stack" /></picture></a>
+<a href="https://www.linkedin.com/in/jeeva-bharathi-m-2592172ab"><picture><source media="(prefers-color-scheme: dark)" srcset="./cards/tile-connect-dark.svg" /><img src="./cards/tile-connect-light.svg" width="32.5%" alt="Experience and LinkedIn" /></picture></a>
 
----
+<a href="https://github.com/jeevabharathi44/loan-eligibility-ai"><picture><source media="(prefers-color-scheme: dark)" srcset="./cards/repo-loan-dark.svg" /><img src="./cards/repo-loan-light.svg" width="49%" alt="loan-eligibility-ai" /></picture></a>
+<a href="https://github.com/jeevabharathi44/driving-scenario-analyzer"><picture><source media="(prefers-color-scheme: dark)" srcset="./cards/repo-driving-dark.svg" /><img src="./cards/repo-driving-light.svg" width="49%" alt="driving-scenario-analyzer" /></picture></a>
 
-### 💻 Technical Skills
-
-- **Languages:** Python, JavaScript, C, C++, SQL
-- **AI & ML:** LLM API Integration, Prompt Engineering, Explainable AI (EBM), NumPy, pandas, scikit-learn
-- **Frontend:** React.js, HTML5, CSS3, Bootstrap, Responsive Web Design
-- **Backend & Databases:** FastAPI, Node.js, Express.js, REST APIs, MySQL
-- **Tools & Testing:** Git, GitHub, Docker, Docker Compose, pytest, Streamlit, Plotly
-
----
-
-### 🏢 Experience & Certifications
-
-- **Full Stack Developer Intern** — *Blaze* (Jun 2026) | HTML, CSS, Bootstrap, JavaScript, Node.js
-- **Software Development Intern** — *Qono Technology* (Jun 2025) | JavaScript, Git, Agile, UI Debugging
-- **Artificial Intelligence & Machine Learning** — *NASSCOM FutureSkills Prime* (Gold — 98%, Jul 2026)
-- **Cloud Computing Engineering (Azure / AWS)** — *NASSCOM FutureSkills Prime* (Gold — 92%, Jul 2026)
-- **Artificial Intelligence** — *Infosys Springboard* (Feb 2025)
+</div>
 
 ---
 
-### 📫 Connect with Me
-
-- **LinkedIn:** [linkedin.com/in/jeeva-bharathi-m-2592172ab](https://www.linkedin.com/in/jeeva-bharathi-m-2592172ab)
+<sub>
+  <strong>Education:</strong> B.E. CSE, Sri Ramakrishna Institute of Technology, Coimbatore (2023–2027) ·
+  <strong>Internships:</strong> Blaze (Full Stack, Jun 2026) · Qono Technology (SWE, Jun 2025) ·
+  <strong>Certs:</strong> NASSCOM AI/ML (Gold 98%) · NASSCOM Cloud (Gold 92%) ·
+  <a href="https://www.linkedin.com/in/jeeva-bharathi-m-2592172ab">LinkedIn ↗</a>
+</sub>
