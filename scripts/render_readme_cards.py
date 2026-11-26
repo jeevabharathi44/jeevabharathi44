@@ -472,6 +472,81 @@ def render_repo(
 </svg>"""
 
 
+def render_skills(t: dict, font_css: str, delay: float = 2.20) -> str:
+    w, h = 880, 174
+    anim = "" if STATIC else f"opacity:0;animation:rise 0.55s cubic-bezier(.22,1,.36,1) {delay:.2f}s forwards;"
+    extra = f"""
+    .sans {{ font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }}
+    .mono {{ font-family: 'IBM Plex Mono', monospace; }}
+    .wrap {{ {anim} }}
+    @keyframes rise {{ from {{ opacity:0; transform:translateY(10px); }} to {{ opacity:1; transform:translateY(0); }} }}
+    """
+    rows = [
+        ("LANGUAGES", "Python · JavaScript · C · C++ · SQL"),
+        ("AI & ML", "LLM API Integration · Prompt Engineering · Explainable AI (EBM) · NumPy · pandas · scikit-learn"),
+        ("FRONTEND", "React.js · HTML5 · CSS3 · Bootstrap · Responsive Web Design"),
+        ("BACKEND & DB", "FastAPI · Node.js · Express.js · REST APIs · MySQL"),
+        ("TOOLS & TEST", "Git · GitHub · Docker · Docker Compose · pytest · Streamlit · Plotly"),
+    ]
+    row_nodes = []
+    for i, (cat, items) in enumerate(rows):
+        y = 60 + i * 23
+        row_nodes.append(
+            f'<text x="34" y="{y}" class="mono" font-size="10.5" fill="{t["accent"]}" letter-spacing="0.06em">{esc(cat)}</text>'
+            f'<text x="156" y="{y}" class="sans" font-size="12.5" fill="{t["ink"]}">{esc(items)}</text>'
+        )
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="Technical Skills Card">
+  {base_styles(font_css, extra)}
+  <g class="wrap">
+    <rect x="0.5" y="0.5" width="{w-1}" height="{h-1}" rx="12" fill="{t['bg']}" stroke="{t['rule']}" />
+    <text x="34" y="31" class="mono" font-size="11.5" fill="{t['muted']}" letter-spacing="0.08em">TECHNICAL STACK · LANGUAGES, AI &amp; ENGINEERING</text>
+    {''.join(row_nodes)}
+  </g>
+</svg>"""
+
+
+def render_credentials(t: dict, font_css: str, delay: float = 2.32) -> str:
+    w, h = 880, 212
+    anim = "" if STATIC else f"opacity:0;animation:rise 0.55s cubic-bezier(.22,1,.36,1) {delay:.2f}s forwards;"
+    extra = f"""
+    .serif {{ font-family: 'Instrument Serif', Georgia, serif; }}
+    .sans {{ font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }}
+    .mono {{ font-family: 'IBM Plex Mono', monospace; }}
+    .wrap {{ {anim} }}
+    @keyframes rise {{ from {{ opacity:0; transform:translateY(10px); }} to {{ opacity:1; transform:translateY(0); }} }}
+    """
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="Experience, Education and Certifications Card">
+  {base_styles(font_css, extra)}
+  <g class="wrap">
+    <rect x="0.5" y="0.5" width="{w-1}" height="{h-1}" rx="12" fill="{t['bg']}" stroke="{t['rule']}" />
+    <line x1="440" y1="22" x2="440" y2="{h - 22}" stroke="{t['rule']}" stroke-width="1" />
+
+    <text x="34" y="32" class="mono" font-size="11" fill="{t['accent']}" letter-spacing="0.08em">EXPERIENCE &amp; EDUCATION</text>
+
+    <text x="34" y="62" class="sans" font-size="13.5" font-weight="600" fill="{t['ink']}">Full Stack Developer Intern · Blaze</text>
+    <text x="34" y="79" class="mono" font-size="10.5" fill="{t['muted']}">JUN 2026 · HTML, CSS, Bootstrap, JavaScript, Node.js</text>
+
+    <text x="34" y="109" class="sans" font-size="13.5" font-weight="600" fill="{t['ink']}">Software Development Intern · Qono Technology</text>
+    <text x="34" y="126" class="mono" font-size="10.5" fill="{t['muted']}">JUN 2025 · JavaScript, Git, Agile, UI Debugging</text>
+
+    <text x="34" y="158" class="sans" font-size="13.5" font-weight="600" fill="{t['ink']}">B.E. Computer Science &amp; Engineering</text>
+    <text x="34" y="175" class="sans" font-size="12" fill="{t['muted']}">Sri Ramakrishna Institute of Technology, Coimbatore</text>
+    <text x="34" y="191" class="mono" font-size="10.5" fill="{t['accent']}">2023 – 2027</text>
+
+    <text x="470" y="32" class="mono" font-size="11" fill="{t['ok']}" letter-spacing="0.08em">CERTIFICATIONS</text>
+
+    <text x="470" y="62" class="sans" font-size="13.5" font-weight="600" fill="{t['ink']}">Artificial Intelligence &amp; Machine Learning</text>
+    <text x="470" y="79" class="mono" font-size="10.5" fill="{t['muted']}">NASSCOM FutureSkills Prime · Gold (98%) · JUL 2026</text>
+
+    <text x="470" y="109" class="sans" font-size="13.5" font-weight="600" fill="{t['ink']}">Cloud Computing Engineering (Azure / AWS)</text>
+    <text x="470" y="126" class="mono" font-size="10.5" fill="{t['muted']}">NASSCOM FutureSkills Prime · Gold (92%) · JUL 2026</text>
+
+    <text x="470" y="158" class="sans" font-size="13.5" font-weight="600" fill="{t['ink']}">Artificial Intelligence</text>
+    <text x="470" y="175" class="mono" font-size="10.5" fill="{t['muted']}">Infosys Springboard · FEB 2025</text>
+  </g>
+</svg>"""
+
+
 def main() -> None:
     data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
     font_css = ensure_fonts()
@@ -538,6 +613,8 @@ def main() -> None:
                 "PYTHON · LLM APIS · NUMPY · SCIKIT-LEARN · PYTEST",
                 2.08,
             ),
+            f"skills-{theme_name}.svg": render_skills(theme, font_css, 2.20),
+            f"credentials-{theme_name}.svg": render_credentials(theme, font_css, 2.32),
         }
         for filename, svg in outputs.items():
             (CARDS_DIR / filename).write_text(svg, encoding="utf-8")
